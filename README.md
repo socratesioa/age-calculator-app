@@ -38,7 +38,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Solution](https://github.com/socratesioa/age-calculator-app)
-- Live Site URL: [Add live site URL here](https://socratesioa.github.io/age-calculator-app)
+- Live Site URL: [Live Site](https://socratesioa.github.io/age-calculator-app)
 
 ## My process
 

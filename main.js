@@ -106,10 +106,10 @@ const handleSubmit = (e) => {
   // Calculate age
   const age = calculateAge(birthDate);
 
-  // Update results
-  document.getElementById("res-years").textContent = age.years;
-  document.getElementById("res-months").textContent = age.months;
-  document.getElementById("res-days").textContent = age.days;
+  // UPDATE AND ANIMATE RESULTS
+  animateCounter("res-years", age.years);
+  animateCounter("res-months", age.months);
+  animateCounter("res-days", age.days);
 
   console.log("Calculated age:", age);
 
@@ -163,3 +163,31 @@ inputs.forEach((input) => {
     }
   });
 });
+
+// ANIMATION COUNTER
+function animateCounter(elementId, targetValue, duration = 800) {
+  const element = document.getElementById(elementId);
+
+  if (typeof targetValue !== "number" || isNaN(targetValue)) {
+    element.textContent = "--";
+    return;
+  }
+
+  const startTime = performance.now();
+
+  function update(currentTime) {
+    const elapsed = currentTime - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    const currentValue = Math.floor(progress * targetValue);
+
+    element.textContent = currentValue;
+
+    if (progress < 1) {
+      requestAnimationFrame(update);
+    } else {
+      element.textContent = targetValue;
+    }
+  }
+
+  requestAnimationFrame(update);
+}

@@ -164,6 +164,11 @@ input::placeholder {
   pointer-events: none;
 }
 
+.btn-arrow {
+  width: 44px;
+  height: 44px;
+}
+
 button {
   border: none;
   width: 96px;
@@ -241,6 +246,11 @@ button:focus {
     align-items: start;
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
+  }
+
+  .btn-arrow {
+    width: 24px;
+    height: 24px;
   }
 
   button {
