@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Age calculator app</title>
+  </head>
+  <body>
+    <div class="site-wrapper">
+      <main>
+        <div class="calculator-wrapper">
+          <form id="form" novalidate>
+            <div class="fields-row">
+              <div class="input-group">
+                <label id="dayLabel" for="day">Day</label>
+                <input
+                  type="text"
+                  id="day"
+                  aria-describedby="error-day"
+                  name="day"
+                  placeholder="DD"
+                  inputmode="numeric"
+                  maxlength="2"
+                  pattern="\d{2}"
+                  autocomplete="bday-day"
+                  aria-invalid="false"
+                  required
+                />
+                <span class="error-message" id="error-day" role="alert"></span>
+              </div>
+              <div class="input-group">
+                <label id="monthLabel" for="month">Month</label>
+                <input
+                  type="text"
+                  id="month"
+                  aria-describedby="error-month"
+                  name="month"
+                  placeholder="MM"
+                  inputmode="numeric"
+                  maxlength="2"
+                  pattern="\d{2}"
+                  autocomplete="bday-month"
+                  aria-invalid="false"
+                  required
+                />
+                <span
+                  class="error-message"
+                  id="error-month"
+                  role="alert"
+                ></span>
+              </div>
+              <div class="input-group">
+                <label id="yearLabel" for="year">Year</label>
+                <input
+                  type="text"
+                  id="year"
+                  aria-describedby="error-year"
+                  name="year"
+                  placeholder="YYYY"
+                  inputmode="numeric"
+                  maxlength="4"
+                  pattern="\d{4}"
+                  autocomplete="bday-year"
+                  aria-invalid="false"
+                  required
+                />
+                <span class="error-message" id="error-year" role="alert"></span>
+              </div>
+            </div>
+            <div class="btn-container">
+              <div class="separator"></div>
+              <button type="submit" aria-label="Calculate age">
+                <img src="./images/icon-arrow.svg" class="btn-arrow" alt="" />
+              </button>
+            </div>
+          </form>
+          <div class="results-container">
+            <p><span id="res-years">--</span>years</p>
+            <p><span id="res-months">--</span>months</p>
+            <p><span id="res-days">--</span>days</p>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
